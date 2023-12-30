@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Options;
 
 namespace Tron.Wallet.Recycle {
-    using Tron.Wallet.Net;
+    using Tron.Wallet;
 
     public record TronRecord(IServiceProvider ServiceProvider, ITronClient? TronClient, IOptions<TronNetOptions>? Options);
 
