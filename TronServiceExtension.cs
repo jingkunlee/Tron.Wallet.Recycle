@@ -2,12 +2,12 @@
 using Microsoft.Extensions.Options;
 
 namespace Tron.Wallet.Recycle {
-    using Tron.Wallet;
+    using Tron;
 
     public record TronRecord(IServiceProvider ServiceProvider, ITronClient? TronClient, IOptions<TronNetOptions>? Options);
 
     public static class TronServiceExtension {
-        private static IServiceProvider AddTronNet() {
+        private static IServiceProvider AddTron() {
             IServiceCollection services = new ServiceCollection();
             services.AddTronNet(x => {
                 x.Network = TronNetwork.MainNet;
@@ -20,7 +20,7 @@ namespace Tron.Wallet.Recycle {
         }
 
         public static TronRecord GetRecord() {
-            var provider = AddTronNet();
+            var provider = AddTron();
             var client = provider.GetService<ITronClient>();
             var options = provider.GetService<IOptions<TronNetOptions>>();
 

@@ -2,9 +2,9 @@
 
 namespace Tron.Wallet.Recycle {
     using Newtonsoft.Json;
-    using Tron.Wallet;
-    using Tron.Wallet.Accounts;
-    using Tron.Wallet.Contracts;
+    using Tron;
+    using Tron.Accounts;
+    using Tron.Contracts;
 
     internal class Program {
         private static async Task Main() {
